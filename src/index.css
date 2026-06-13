@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@media print {
+  /* Hide all screen interface elements */
+  header,
+  footer,
+  form,
+  aside,
+  input,
+  textarea,
+  button,
+  .print\:hidden,
+  .no-print,
+  #spreadsheet-preview-container,
+  #agent-chat-container,
+  #app-accent-banner {
+    display: none !important;
+  }
+  
+  /* Reset body wrapper styling for printable sheets */
+  body, html, #root, main, #dashboard-stage, #report-dashboard-container {
+    background: #ffffff !important;
+    color: #18181b !important; /* zinc-900 */
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  /* Force display of elements marked with print:block or printed-element classes */
+  .print-only-container {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Standard page divisions */
+  .page-break-before {
+    page-break-before: always !important;
+  }
+
+  .break-inside-avoid {
+    break-inside: avoid !important;
+  }
+}
+
